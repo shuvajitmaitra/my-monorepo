@@ -2,6 +2,8 @@ import Image, { type ImageProps } from "next/image";
 import { Button } from "@repo/ui/button";
 import styles from "./page.module.css";
 
+import { slugify } from "@mono/utils";
+
 type Props = Omit<ImageProps, "src"> & {
   srcLight: string;
   srcDark: string;
@@ -35,8 +37,10 @@ export default function Home() {
           <li>
             Get started by editing <code>apps/web/app/page.tsx</code>
           </li>
+
           <li>Save and see your changes instantly.</li>
         </ol>
+        <p>{slugify("Shuvajit Maitra")}</p>
 
         <div className={styles.ctas}>
           <a
@@ -45,21 +49,10 @@ export default function Home() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
+            <Image className={styles.logo} src="/vercel.svg" alt="Vercel logomark" width={20} height={20} />
             Deploy now
           </a>
-          <a
-            href="https://turborepo.dev/docs?utm_source"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
+          <a href="https://turborepo.dev/docs?utm_source" target="_blank" rel="noopener noreferrer" className={styles.secondary}>
             Read our docs
           </a>
         </div>
@@ -73,27 +66,11 @@ export default function Home() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
+          <Image aria-hidden src="/window.svg" alt="Window icon" width={16} height={16} />
           Examples
         </a>
-        <a
-          href="https://turborepo.dev?utm_source=create-turbo"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
+        <a href="https://turborepo.dev?utm_source=create-turbo" target="_blank" rel="noopener noreferrer">
+          <Image aria-hidden src="/globe.svg" alt="Globe icon" width={16} height={16} />
           Go to turborepo.dev →
         </a>
       </footer>
